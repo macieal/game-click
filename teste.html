@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Clicar no Botão</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+        #game-container {
+            text-align: center;
+        }
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #click-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #click-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="score">clicks: 0</div>
+        <button id="click-button">Clique aqui!</button>
+    </div>
+
+    <script>
+        let score = 0;
+        const scoreDisplay = document.getElementById('score');
+        const clickButton = document.getElementById('click-button');
+
+        clickButton.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = `clicks: ${score}`;
+        });
+    </script>
+</body>
+</html>
